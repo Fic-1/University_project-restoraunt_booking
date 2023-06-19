@@ -1,0 +1,38 @@
+Reservation of tables in the restaurant
+Roles: administrator, moderator, registered user and anonymous/unregistered users
+
+The system serves to reserve tables in the restaurant. The system must have the ability to log in and log out of users from the system. There is one built-in administrator in the system (username: admin, password: foi). 
+The administrator is a registered user whose type is equal to 0. The system must contain the page about_author.html (the link to the page must be in the header of each page) which contains the personal data of the author 
+(all data are mandatory): first name, last name, index number, email (mandatory FOI mail), center, year (academic year of first enrollment in the IWA course) 
+and a 300x400px JPG format image 
+(e.g. as on a personal card or index).
+
+An anonymous/unregistered user sees a list of the top 5 restaurants with the most reserved tables in the past month. In the list, see the picture of the restaurant, the address of the restaurant and the name of the 
+restaurant.
+
+In addition to its functionalities, the registered user has all the same functionalities as the unregistered user. The page he can access acts as a restaurant table search engine for booking. On that page, he can 
+choose from the list a restaurant and the date and time of the start and end, while all the tables of the restaurant that have not yet been reserved for that time are listed. 
+The list of tables contains the id of the table and the number of seats at the table. He can select a table, which opens a table reservation request. In the request, you must enter the number of people, 
+the date and time of the start of the reservation and the expected time of stay in the restaurant. The time spent in the restaurant must not exceed 3 hours, and the number of people must not exceed the number of seats 
+at the table. When sending a reservation request, the end date and time is automatically calculated based on the length of stay and the date and time the reservation began. He can see all his reservation requests with 
+all information about the request, where the status is descriptively defined: waiting for the restaurant's approval - 0, confirmation of the new time - 1, approved - 2 or rejected - 3. If the request has a status of 1, 
+he can confirm it immediately goes into approved status (see more from the moderator).
+
+In addition to its functionalities, the moderator has all the functionalities as a registered user. See a list of all reservation requests for the leading restaurant sorted in descending order by start date and time. 
+The page contains the name of the restaurant, address and picture of the restaurant, and the list of requests for reservations contains the request id, request status, first and last name of the user who requested the 
+reservation, table id for which the reservation was requested, the expected number of people and the date and start and end time. The request can be approved (station status 2), rejected (station status 3), 
+and can also offer a different start date and time and end date and time of the reservation (station status 1). He sees the list of tables of the restaurant he is in charge of with all the information about the table, 
+where he can add new tables or delete old tables.
+
+In addition to its functions, the administrator also has all the functions of a moderator. Enters, updates and reviews system users and defines and updates their types. 
+Enters, updates and reviews restaurants. Assigns a moderator for the restaurant. One restaurant can have several moderators, and one moderator can be in charge of one restaurant. 
+See the statistics of the number of approved table reservations by restaurant.
+
+Note: All dates must be entered by the user and displayed to the user in the "d.m.Y" format, and the time (00:00:00 - 23:59:59) in the "H:i:s" format (do not use dates and thus HTML type for input element). 
+The format "d.m.Y" represents the PHP code of the given function and is mapped to the Croatian format "dd.mm.yyyy". The format "H:i:s" represents the PHP code of the given function and is mapped to the 
+Croatian format "hh.mm.ss". The server is called localhost and the database is iwa_2022_za_projekt. The user for accessing the database is called iwa_2022 and the password is foi2022. To be able to login to the 
+local phpmyadmin, it is necessary to edit the "config.inc.php" script in such a way that "auth_type" is set to "cookie" instead of "config". When creating a project solution, the instructions must be followed 
+exactly and MUST NOT be changed (server name, database, table structure, user and password). The completed solution of the project task should be sent through the solution submission system, followed by a 
+notification and agreement on the defense of the project. The defense of the project solution is done on the computer and the teacher's database. 
+
+Projects must not contain comments in the program code!
